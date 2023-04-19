@@ -1,0 +1,38 @@
+.my-btn {
+  background-color: #4caf50;
+  position: absolute;
+  position: fixed;
+  top: 20%;
+  right: 0;
+  z-index: 999;
+  width: 50px;
+  height: 250px;
+  border-radius: 15px 0 0 15px;
+  border: none;
+  cursor: not-allowed;
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: none;
+}
+.my-drawer {
+  position: absolute;
+  position: fixed;
+  top: 20%;
+  right: 0;
+  width: 0px;
+  height: 50%;
+  background-color: #46f000;
+  overflow: hidden;
+  z-index: 999;
+}
+.open {
+  width: 300px;
+}
+.hidden {
+  display: none;
+}
