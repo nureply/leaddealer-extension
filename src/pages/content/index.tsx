@@ -1,29 +1,30 @@
 (async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
+  // creating elements
+  const logo = document.createElement("img");
+  const brand = document.createElement("img");
+  const newDrawer = document.createElement("div");
+  const thumb = document.createElement("button");
 
-  const btn = document.createElement("button");
-  const drawer = document.createElement("div");
-  btn.textContent = "Dealer";
-  btn.classList.add("my-btn");
-  drawer.classList.add("my-drawer");
+  //adding classes and properties
+  newDrawer.classList.add("new-drawer");
+  thumb.classList.add("thumb");
+  logo.src = chrome.runtime.getURL("/nureplyLogo.png");
+  logo.classList.add("my-img");
+  brand.src = chrome.runtime.getURL("/rotated.png");
+  brand.classList.add("brand");
 
-  btn.addEventListener("click", () => {
-    drawer.classList.toggle("open");
-    btn.classList.toggle("hidden");
+  // adding event listeners
+  thumb.addEventListener("click", () => {
+    newDrawer.classList.toggle("slide-in");
+    thumb.classList.toggle("slide-in");
   });
 
-  const closeDrawer = () => {
-    drawer.classList.remove("open");
-    btn.classList.remove("hidden");
-  };
+  // appending elements
+  thumb.textContent = "Thumb";
+  newDrawer.textContent = "New Drawer";
 
-  const closeBtn = document.createElement("button");
-  closeBtn.textContent = "X";
-  closeBtn.classList.add("close-btn");
-  closeBtn.addEventListener("click", closeDrawer);
-  drawer.appendChild(closeBtn);
-
-  drawer.appendChild(document.createTextNode("Drawer content"));
-  document.body.appendChild(btn);
-  document.body.appendChild(drawer);
+  //adding the elements to the DOM
+  document.body.appendChild(newDrawer);
+  document.body.appendChild(thumb);
 })();

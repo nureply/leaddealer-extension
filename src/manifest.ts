@@ -25,7 +25,11 @@ const manifest: Manifest.WebExtensionManifest = {
   },
   content_scripts: [
     {
-      matches: ["http://*/*", "https://*/*", "<all_urls>"],
+      matches: [
+        "https://linkedin.com/in*",
+        "https://www.linkedin.com/in*",
+        "https://*.linkedin.com/in*",
+      ],
       js: ["src/pages/content/index.js"],
       css: ["contentStyle.css"],
     },
@@ -33,8 +37,14 @@ const manifest: Manifest.WebExtensionManifest = {
   devtools_page: "src/pages/devtools/index.html",
   web_accessible_resources: [
     {
-      resources: ["contentStyle.css", "icon-128.png", "icon-34.png"],
-      matches: [],
+      resources: [
+        "contentStyle.css",
+        "icon-128.png",
+        "icon-34.png",
+        "nureplyLogo.png",
+        "rotated.png",
+      ],
+      matches: ["http://*/*", "https://*/*", "<all_urls>"],
     },
   ],
 };
