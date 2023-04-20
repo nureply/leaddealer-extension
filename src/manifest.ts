@@ -29,6 +29,7 @@ const manifest: Manifest.WebExtensionManifest = {
         "https://linkedin.com/in*",
         "https://www.linkedin.com/in*",
         "https://*.linkedin.com/in*",
+        "https://www.linkedin.com/search/results/people/*",
       ],
       js: ["src/pages/content/index.js"],
       css: ["contentStyle.css"],
